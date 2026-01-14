@@ -58,35 +58,7 @@
 
 
     </style>
-    <script>
-(function () {
-
-  const DESIGN_WIDTH = 950;
-
-  function applyDesktopScale() {
-    const screenWidth = window.innerWidth;
-    if (!screenWidth || screenWidth < 300) return;
-
-    const scale = screenWidth / DESIGN_WIDTH;
-
-    const offsetX = (screenWidth - DESIGN_WIDTH * scale) / 2;
-
-    const html = document.documentElement;
-
-    html.style.width = DESIGN_WIDTH + 'px';
-    html.style.transform =
-      `translateX(${offsetX}px) scale(${scale})`;
-    html.style.transformOrigin = 'top right';
-
-    document.body.style.width = DESIGN_WIDTH + 'px';
-    document.body.style.overflowX = 'hidden';
-  }
-
-  window.addEventListener('load', applyDesktopScale);
-  window.addEventListener('resize', applyDesktopScale);
-
-})();
-</script>
+  
 </head>
 <body>
 
