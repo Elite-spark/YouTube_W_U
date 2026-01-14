@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Video Experience</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        :root {
+            --glow-color: #00d2ff;
+            --bg-color: #000;
+            --accent-color: #ff0055;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            margin: 25;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .swiper {
+            width: 100%;
+            padding: 50px 0;
+        }
+
+        .swiper-slide {
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* لتوسيط الزر تحت الكرت */
+        }
+
+        /* حاوية الكارت */
+        .card-container {
+            position: relative;
+            transition: all 0.5s ease;
+        }
+
+        .video-card {
+            width: 560px;
+            height: 315px;
+            background: #000;
+            border-radius: 15px;
+            box-shadow: 0 0 20px var(--glow-color);
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+
+    </style>
+    <script>
+(function () {
+
+  const DESIGN_WIDTH = 950;
+
+  function applyDesktopScale() {
+    const screenWidth = window.innerWidth;
+    if (!screenWidth || screenWidth < 300) return;
+
+    const scale = screenWidth / DESIGN_WIDTH;
+
+    const offsetX = (screenWidth - DESIGN_WIDTH * scale) / 2;
+
+    const html = document.documentElement;
+
+    html.style.width = DESIGN_WIDTH + 'px';
+    html.style.transform =
+      `translateX(${offsetX}px) scale(${scale})`;
+    html.style.transformOrigin = 'top right';
+
+    document.body.style.width = DESIGN_WIDTH + 'px';
+    document.body.style.overflowX = 'hidden';
+  }
+
+  window.addEventListener('load', applyDesktopScale);
+  window.addEventListener('resize', applyDesktopScale);
+
+})();
+</script>
+</head>
+<body>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="video-card" id="vid1">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UKKSf07b5hI?si=2Z8iiaZ2JyPXEdB5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="video-card" id="vid2">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/p_ZtM3cSVGE?si=nZZKtZFdfME7fuwt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="video-card" id="vid3">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zml-0PjoqbM?si=oxAoZq0_4P0tXUeb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="video-card" id="vid4">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/KmQhy-Gg2nU?si=4imVCgpvLkog4sLf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-container">
+                    <div class="video-card" id="vid5">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mhlmAEf8rm4?si=2hHYLPQjGKwgwdWl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            spaceBetween: 20, // تقريب المسافات كما طلبت
+            loop: true,
+        });
+
+    </script>
+</body>
+</html>
